@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timestamp Microservice API | Pratheev</title>
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Timestamp Microservice">
+  <meta name="author" content="Pratheev">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab|Pacifico">
+<style>
+body{
+  height:100%;
+  overflow:hidden;
+}
+.content{
+ color:#333;
+  background: #fff;
+padding: 5px;
+display: block;
+margin: auto;
+text-align: center;
+width: 425px;
+padding-top: 1px;
+padding-bottom: 30px;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;}
+#header{
+top: 0;
+position: fixed;
+height: 40px;
+background: #fff;
+left: 0;
+right: 0;
+  z-index:100;
+  box-shadow: 0px 1px 15px #333;
+    overflow:hidden;
+}
+
+.brand{
+font-weight:100;
+  color:#444;
+  font-size:25px;
+text-align:center;
+  margin-top:-2px;
+}
+.cursive{
+  font-family: 'Pacifico', cursive;
+}
+
+.has-header{
+  padding-top:50px;
+}
+.has-footer{
+  padding-bottom:25px;
+}
+#footer{
+  bottom:0;
+  position:fixed;
+  width:100%;
+  background:#fff;
+  height:30px;
+  left:0;
+    z-index:100;
+  box-shadow: 0px -1px 15px #333;
+      overflow:hidden;
+}
+
+.developer{
+  color:#444;
+  display:inline;
+}
+.about{
+  font-family: 'Josefin Slab', serif;
+  display:inline;
+  margin-left:45%;
+}
+code{
+    font-family: 'Josefin Slab', serif;
+    color:#fff;
+    background:#333;
+    padding:6px;
+    border-radius:8px;
+transition:color 1s ease,background 1s ease;
+}
+.link:hover{
+background:#aaa;
+color:#333;
+cursor:pointer;
+transition:color 1s ease,background 1s ease;
+}
+a{
+  text-decoration:none;
+  outline:none;
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 95%;
+}
+</style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="header">
+      <h1 class="brand cursive">Timestamp Microservice.</h1>
+    </div>
+      <div class="outer">
+      <div class="middle">
+    <div class="inner has-header has-footer">
+      <div class="content">
+    <h3 class="cursive">Usage:</h3>
+    <a href="https://pratt-timestamp-api.herokuapp.com/October 27, 1997"><code class="link">https://pratt-timestamp-api.herokuapp.com/October 27, 1997</code></a>
+    <br><br>
+    <a href="https://pratt-timestamp-api.herokuapp.com/877910400"><code class="link">https://pratt-timestamp-api.herokuapp.com/877910400</code></a>
+    <br>
+    <br>
+    <h3 class="cursive">Output:</h3>
+    <code>
+      {"unix":877910400,"natural":"October 27, 1997"}
+    </code>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div id="footer">
+      <p class="about">Designed by</p> <p class="developer cursive">Pratheev.</p>
+    </div>
+</body>
+
+</html>

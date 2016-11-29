@@ -1,5 +1,5 @@
 {
-  "name": "timestamp",
+  "name": "timestamp-ms",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "moment": "^2.10.6",
     "express": "^4.14.0"
   }
 }
