@@ -1,5 +1,4 @@
 'use strict';
-//var moment = require('moment');
 
 module.exports = function(app) {
 
@@ -15,9 +14,10 @@ module.exports = function(app) {
         }
 
         // Check for initial natural time
-        if (isNaN(+date) && moment(date, "MMMM D, YYYY").isValid()) {
-            unix = +natToUnix(date);
-            //natural = unixToNat(unix);
+        if (isNaN(+date)) {
+            var temp = parseDate(date);
+            unix = natToUnix(temp[0], months.indexOf(temp[1]), temp[2]);
+            natural = date;
         }
 
         var dateObj = { "unix": unix, "natural": natural };
@@ -25,17 +25,40 @@ module.exports = function(app) {
 
     });
 
-    function natToUnix(date) {
+    function natToUnix(year,month,date) {
         // Conver from natural date to unix timestamp
-        //return moment(date, "MMMM D, YYYY").format("X");
-        return Date.now();
+        return (new Date(year,month,date).getTime() / 1000);
     }
 
-    /*function unixToNat(unix) {
+    function unixToNat(unix) {
         // Convert unix timestamp to natural date
-        return moment.unix(unix).format("MMMM D, YYYY");
-    }*/
+        var date = new Date(unix*1000);
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    }
 
+    function parseDate(d){
+        var temp = d.split(",");
 
+        var y = temp[1];
+        var m = temp[0].split(" ")[0];
+        var dt = temp[0].split(" ")[1];
+
+        return [y,m,dt];
+    }
+
+    var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
 
 };
